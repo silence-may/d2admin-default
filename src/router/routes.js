@@ -46,16 +46,26 @@ const frameIn = [
       }
     ]
   },
-  // {
-  //   path: '/demo',
-  //   name: 'demo',
-  //   component: layoutHeaderAside,
-  //   meta: {
-  //     requiresAuth: true,
-  //     title: 'demo',
-  //     catch:true
-  //   },
-  // }
+  // 用户管理
+  {
+    path: '/user',
+    component: layoutHeaderAside,
+    meta: {
+      auth: true
+    },
+    children:[
+      {
+        path: '/user/list',
+        name: 'user',
+        meta: {
+          auth: true,
+          title: '用户管理',
+          cache:true
+        },
+        // component: resolve => require(['@/pages/Users/user'],resolve),
+      },
+    ],
+  },
 ]
 
 /**
